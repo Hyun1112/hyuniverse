@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="포트폴리오, 영상편집, 웹퍼블리셔">
+    <meta name="description" content="웹표준을 지키는 퍼블리셔 김현경입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://hyuniverse.kr">
+    <meta property="og:title" content="김현경의 포트폴리오">
+    <meta property="og:description" content="김현경의 포트폴리오입니다.">
+    <meta property="og:image" content="http://hyuniverse.kr/ui/asset/thumbnail.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://hyuniverse.kr">
+    <meta property="twitter:title" content="김현경의 포트폴리오">
+    <meta property="twitter:description" content="김현경의 포트폴리오입니다.">
+    <meta property="twitter:image" content="http://hyuniverse.kr/ui/asset/thumbnail.png">
+    <title>hyuniverse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="/ui/asset/favicon3.ico" type="image/x-icon">
+    <link rel="icon" href="./ui/asset/favicon3.ico" type="image/x-icon">
+    <link rel="icon" href="favicon3.ico" type="image/x-icon">
+    <style>
+        * {margin: 0; padding: 0; list-style: none; font-family: 'Pretendard'; cursor: none;}
+        button, input{display: block;}
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+            font-weight: 200;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        /* blue : #2084FC gray : #484848 light-gray : #ECECEC black : #131313 
+        gra1 #E7E5E8 ~ #D2D2D2*/
+        /*테두리 사이즈 검정:30px 애플바:120px*/
+        .screen_out {display: none;}
+
+        html {margin: 0; padding: 0; width: 100%; height: 100%;  background: #000; box-sizing: border-box;}
+        body{position: relative; margin: 0; padding: 0; width: 100%; height: 100%; padding: 30px 30px 130px; box-sizing: border-box;}
+        main {max-width: 100%; margin: 0 auto; overflow-x: hidden; box-sizing: border-box;}
+        #cursor img {position: fixed; width: 40px; margin: -12px 0 0 -11px; pointer-events: none; z-index: 1000;}
+
+        /*하단바 (애플)*/
+        #footer_bar {width: calc(100% + 60PX); height: 15vh; position: fixed; background: #484848; bottom: 0; z-index: 100; display: block; margin: auto; left: -30px;}
+        #footer_bar::before{content: ''; width: 100%; height: 30px; background: #000; position: absolute; top: -30px;}
+        #footer_bar::before:hover {box-shadow: 1px 1px 5px #eee;}
+        #footer_bar span {width: 65px; height: 65px; background: url(./ui/asset/apple_logo.png) center/contain no-repeat; position: absolute; z-index: 120; top: 50%; left: 50%; transform: translate(-50%, -50%);}/*cursor: pointer; */
+        #footer_bar span:hover {background-image: url(./ui/asset/apple_logo_w.png);}
+
+        /*Intro*/
+        #sec_intro {height: 100%; background: url(./ui/asset/home.png) center/cover no-repeat;}
+        #sec_intro div{background-color : rgba(0,0,0,0.4); width: 100%; height: 100%;display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        #sec_intro h2 {display: block; font-family: 'Pretendard'; font-size: 32px; font-weight: 600; color: #fff; text-shadow: 0px 1px 8px #333; margin-bottom: 15px;}
+        #sec_intro h2::before {content: ""; width: 155px; height: 155px; background: url(./ui/asset/intro_profile.jpg) center / cover; border-radius: 50%; display: block; margin-bottom: 20px; margin: auto;}
+        #intro {text-decoration: none; color: #131313; background: rgba(255, 255, 255, 0.7); padding: 8px 70px; border-radius: 50px; font-family: 'Pretendard'; font-weight: 400; font-size: 24px;}
+        #sec_intro a:hover {font-weight: 600; text-shadow: 1px 1px 1px #9E9E9E;}
+
+        /*header*/
+        header {width: calc(100% - 60px); display: flex; height: 40px; background: rgba(255, 255, 255, 0.8); align-items: center; font-size: 16px; padding: 0px 20px; position: fixed; top: 30px; z-index: 100; box-sizing: border-box;}
+        header::before{content: ''; width: 100%; height: 30px; background: #000; position: absolute; top: -30px; left: 0;}
+        header h1 a{text-indent: -999px; overflow: hidden; width: 70px; height: 40px; background: url(./ui/asset/logo.png) center / contain no-repeat; display: block; margin-right: 20px;}
+        header nav {height: 100%;}
+        header nav>ul {display: flex;height: 100%;}
+        header nav>ul>li {height: 100%; display: flex; align-items: center;}
+        header nav>ul>li>a {text-decoration: none; color: #131313; padding: 20px; box-sizing: border-box;}
+        header nav>ul>li:hover {background: #2084FC;}
+        header nav>ul>li:hover>a {color: #fff;}
+        header nav>ul>li.color {background: #2084FC;}
+        header nav>ul>li.color>a {color: #fff;}
+        header nav>ul>li:nth-of-type(2):hover #portfolio_menubar {display: flex;}
+        header #portfolio_menubar {flex-direction: column; height: fit-content; position: absolute; margin-top: 202px; background: rgba(255, 255, 255, 0.7); border: 1px solid #D9E0E6; border-radius: 0 0 15px 15px; display: none;}
+        header .portfolio_menu {width: 100px; height: 33px; line-height: 33px; padding: 10px 20px 10px 10px; }/*cursor: pointer;*/
+        header .portfolio_menu:not(:last-child) {border-bottom: 1px solid #D9E0E6;}
+        header .portfolio_menu:last-child {border-radius: 0 0 15px 15px;}
+        header .portfolio_menu a {text-decoration: none; color: #131313; width: 100%;}
+        header .portfolio_menu:hover {background: #2084FC;}
+        header .portfolio_menu:hover a {color: #fff;}
+        header .portfolio_menu.color {background: #2084FC;}
+        header .portfolio_menu.color a {color: #fff;}
+        header #time {position: absolute; right: 20px; font-size: 17px; font-weight: 500;}
+        header button {display: none; border: none; color: #666; font-size: 19px; width:26px; height:26px; background:transparent; z-index: 100;}
+        header button:hover {color:#333}
+
+
+        /*Home*/
+        #sec_home {height: calc(100vh - 15vh - 60px); background: url(./ui/asset/home.png) center/cover no-repeat;  display: flex; justify-content: center; align-items: center; box-sizing: border-box;  background-origin: padding-box;}
+        #sec_home #home_content {position: relative;}
+        #sec_home #welcome{width: 500px; height: 300px; display: flex; flex-direction: column; box-shadow: 0 5px 10px rgba(0, 0, 0, .3); border-radius: 40px 40px 40px 40px; z-index: 10; position: absolute; margin-top: 20px;}
+        #sec_home #welcome h3{text-align: center; margin: 8px 0; font-size: 17px;}
+        #sec_home #welcome div:nth-of-type(1) {background: linear-gradient(to bottom, #E7E5E8, #D2D2D2); border: 1px solid #B7B7B7;border-radius: 30px 30px 0 0;}
+        #sec_home #welcome div:nth-of-type(2){height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px; background: #ECECEC;  border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 20px; color: #484848;}
+        #sec_home #preview {width: 650px; display: flex; flex-direction: column; box-shadow: 0 5px 10px rgba(0, 0, 0, .3); border-radius: 40px 40px 40px 40px; margin: 100px 0 0 400px;}
+        #sec_home #preview h3{text-align: center; margin: 8px 0; font-size: 17px;}
+        #sec_home #preview>div:nth-of-type(1) {background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #sec_home #preview>div:nth-of-type(2) {height: 100%; display: flex; flex-direction: column; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 20px 0; overflow: hidden;}
+        #sec_home #preview_detail>div:nth-of-type(1) {overflow: hidden; width: 550px; height: 290px;}
+        #sec_home #preview_detail ul {display: flex; transition: ease all .3s; width: fit-content;}
+        #sec_home #preview_detail img {width: 550px; height: 290px; object-fit: cover; box-shadow: 2px 2px 5px #B7B7B7; object-position: 0 -35px;}
+        #sec_home #preview_detail details {display: none;}
+        #sec_home #preview_detail div:nth-of-type(2) {width: 90%; justify-content: flex-end; display: flex; gap: 15px; position: relative; margin-top: 10px;}
+        #sec_home #preview_detail button {width: 36px; height: 34px; text-indent: -999px; overflow: hidden; background: #fff; border: 1px solid #B7B7B7; border-radius: 6px; box-shadow: 1px 1px 3px #B7B7B7;}
+        #sec_home #preview_detail button:nth-of-type(1)::before {content: "\f053"; font-family: "FontAwesome"; font-size: 20px; position: absolute; top: 7px; right: -430px; opacity: 70%;}
+        #sec_home #preview_detail button:nth-of-type(1).none::before {content: "\f053"; font-family: "FontAwesome"; font-size: 20px; position: absolute; top: 7px; right: -430px; opacity: 30%;}
+        #sec_home #preview_detail button:nth-of-type(2)::before {content: "\f054"; font-family: "FontAwesome"; font-size: 20px; position: absolute; top: 7px; right: -481px; opacity: 70%;}
+        #sec_home #preview_detail button:nth-of-type(2).none::before {content: "\f054"; font-family: "FontAwesome"; font-size: 20px; position: absolute; top: 7px; right: -481px; opacity: 30%;}
+        @keyframes action {
+            /*사진 흔들기 액션. 마진은 이미 사용하고 있으므로 transform 사용한다*/
+            0% {transform: translateX(0px);}
+            25% {transform: translateX(-50px);}
+            50% {transform: translateX(30px);}
+            75% {transform: translateX(-10px);}
+            100% {transform: translateX(0px);}
+        }
+
+        /* Portfolio - category */
+        #sec_portfolio {background: url(./ui/asset/portfolio.png) center/cover no-repeat; width: 100%; height: calc(100vh - 15vh - 60px); position: relative;}
+        #sec_portfolio #category_port {width: 100%; height: calc(100vh - 15vh - 60px); display: flex; justify-content: center; align-items: center;position: absolute;}
+        #sec_portfolio #category_port div {display: flex; justify-content: center; align-items: flex-end; gap: 164px; position: relative;}
+        #sec_portfolio #category_port a{width: 110px; padding-top: 130px; background: none; border: none; color: #fff; text-shadow: 1px 1px 1px #333; font-size: 20px; z-index: 20; text-decoration: none; text-align: center;}
+        #sec_portfolio #category_port a:nth-of-type(1):hover~span:nth-of-type(1){display: block;}
+        #sec_portfolio #category_port a:nth-of-type(2):hover~span:nth-of-type(2){display: block;}
+        #sec_portfolio #category_port a:nth-of-type(3):hover~span:nth-of-type(3){display: block;}
+        #sec_portfolio #category_port span{content: ""; background: rgba(0, 0, 0, .2); border-radius: 50%; position: absolute; width: 200px; height: 200px; left: -45px; top: -18px; z-index: 10; display: none;}
+        #sec_portfolio #category_port span:nth-of-type(2){left: 230px;}
+        #sec_portfolio #category_port span:nth-of-type(3){left: 505px;}
+        #sec_portfolio #category_port a:nth-of-type(1) {margin-left: 0;}
+        #sec_portfolio #category_port a::before {content: ''; width: 115px; height: 115px; background: url(./ui/asset/icon_video.png) center/cover no-repeat; position: absolute; top: 0; left: 0;}
+        #sec_portfolio #category_port a:nth-of-type(2)::before {background-image: url(./ui/asset/icon_graphics.png); left: 50%; transform: translateX(-50%);}
+        #sec_portfolio #category_port a:nth-of-type(3)::before {background-image: url(./ui/asset/icon_web.png); left: auto; right: 0;}
+
+        /* Portfolio - Video */
+        #video_list {width: 100%; height: calc(100vh - 15vh - 60px); display: flex; justify-content: center; align-items: center; overflow: hidden; position: absolute;}
+        #video_list ul {display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 80px; width: 1200px; height: 400px; padding: 30px;}
+        #video_list ul li {text-align: center; width: 140px; word-break: keep-all; display: flex; flex-direction: column; align-items: center; margin-bottom: 0px; margin-top: 20px; position: relative; transition: all 0.3s ease;}
+        /* #video_list ul li:hover>img{transform: scale(1.1);} */
+        #video_list ul li img:hover {margin: 10px 10px 10px 10px; transform: scale(1.2); z-index: 1;transition: all 0.3s ease;}
+        #video_list ul li>p {color: #fff; text-shadow: 1px 1px 1px #333; font-size: 16px; font-weight: 500; margin-top: 5px;}/* cursor: pointer;*/
+        #video_list ul li>p::after {content: ".mp4";}
+        #video_list ul li img {width: 160px; height: 90px; box-shadow: 0.5px 0.5px 3px #707070; object-fit: cover;transition: all 0.3s ease;}/* cursor: pointer;*/
+        #video_list details {position: fixed; width: 100%; height: calc(100% - 15vh - 100px); top: 70px; left: 0; box-sizing: border-box; z-index: 10; display: none; justify-content: center; align-items: center; flex-wrap: wrap; backdrop-filter: blur(2px); background-color: rgba(0, 0, 0, .3);}
+        #video_list li.on details {display: flex;}
+        #video_list summary {display: none;}
+        #video_list .video_detail {width: calc(60vw); min-width: 800px; z-index: 10; font-family: 'Pretendard'; display: flex; flex-direction: column; align-items: center; margin: calc((100vh - 15vh - 60px) / 2) auto;  backdrop-filter: blur(5px); border-radius: 30px; transform: translateY(-54%);}
+        #video_list .video_detail div:nth-of-type(1) {width: 100%; background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #video_list .video_detail div:nth-of-type(1) p{margin: 8px 0; font-size: 17px; font-weight: 600;}
+        #video_list .video_detail div:nth-of-type(2) {width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 20px 0;}
+        #video_list .video_detail div:nth-of-type(2) p:nth-of-type(1){color: #131313; font-size: 15px; font-weight: 700; margin: 10px 0 5px;}
+        #video_list .video_detail div:nth-of-type(2) p:nth-of-type(2) {color: #484848; font-size: 13px; font-weight: 400;}
+        #video_list .video_detail iframe {width: calc(50vw - 150px); min-width: 515px; height: calc((50vw - 150px)/16*9); min-height: 289px;}
+        #video_list .video_detail a {text-indent: -999px; overflow: hidden; width: 45px;background: url(./ui/asset/youtube.png) center/contain no-repeat; position: absolute; right: 9%; top: 89%;}
+
+
+        /* Portfolio - Graphics */
+        #graphics_list {width: 100%; height: calc(100vh - 15vh - 60px); display: flex; justify-content: center; align-items: center; position: relative; position: absolute; flex-wrap: wrap;}
+        #graphics_container {display: flex; justify-content: center; align-items: center; gap: 100px; width: 100%; height: 100%;}
+        #graphics_container>li {position: relative;}
+        #graphics_container>li>span {position: absolute; color: #fff; bottom: -40px; left: 50%; transform: translateX(-50%); font-size: 20px; text-shadow: 1px 1px 1px #333;}
+        #graphics_container .graphics_menu {width: 240px; height: 240px; display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start; background: rgba(255, 255, 255, 0.4);  border-radius: 20px; box-shadow: 1px 1px 5px #484848; gap: 20px; padding: 20px; box-sizing: border-box; overflow: hidden;}
+        #graphics_container .graphics_menu.open {width: 580px; height: 300px;} /*3줄이면 heigt 440px*/
+        #graphics_container .graphics_menu>li>span {display: none;}
+        #graphics_container .image_box{width: 90px; height: 90px; overflow: hidden; border-radius: 15px;}
+        #graphics_container .image_box.open {width: 120px; height: 120px;}
+        #graphics_container .image_box img{width: 100%; height: 100%; object-fit: cover;}/* cursor: pointer;*/
+        /* .graphics_menu.open .image_box.open{width: 150px; height: 150px;} */
+        .graphics_menu details {position: fixed; display: none; align-items: center; justify-content: center; top: 70px; left: 0; width: 100%; height: calc(100% - 15vh - 100px);z-index: 50;}
+        .graphics_menu details.on {display: flex;}
+        .graphics_menu details summary{display: none;}
+        .graphics_detail {font-family: 'Pretendard';  width: calc(100% - 500px); min-width: 700px; max-width: 1000px; height: calc(100% - 16vh); margin: 8vh auto;}
+        .graphics_detail .image_btn {width: 65%; height: 100%; position: relative;}
+        .graphics_detail .image_btn.expand {position: fixed; width: calc(100% - 60px); height: calc(100% - 15vh - 100px); z-index: 100; display: flex;top: 70px; left: 0;backdrop-filter: blur(5px); margin-left: 30px;}
+        .graphics_detail .image_btn.expand img{width: fit-content; height: 80%; margin: auto;}
+        .graphics_detail .image_btn.expand button {display: none;}
+        .graphics_detail img {width: 100%; height: 100%; object-fit: cover;}
+        .graphics_detail .image_btn button {width: 18px; height: 18px; position: absolute; background: url(./ui/asset/Expand.png) center/contain no-repeat; text-indent: -999px; overflow: hidden; border: none; bottom: 5px; right: 5px; z-index: 55;}
+        .graphics_detail>div:nth-of-type(1) {width: 100%;background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0; box-sizing: border-box;}
+        .graphics_detail>div:nth-of-type(1) p{margin: 8px 0; text-align: center; font-size: 17px; font-weight: 600; box-sizing: border-box;}
+        .graphics_detail>div:nth-of-type(2) {width: 100%; height: calc(100% - 36px); display: flex; justify-content: center; align-items: flex-start; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 25px 35px; gap: 30px; box-sizing: border-box;}
+        .graphics_detail>div:nth-of-type(2)>div>p:first-child {font-size: 17px; font-weight: 600;}
+        .graphics_detail>div:nth-of-type(2)>div>div {display: flex; justify-content: space-between; align-items: center; margin-top: 25px;}
+        .graphics_detail>div:nth-of-type(2)>div {position: relative;}
+        .graphics_detail>div:nth-of-type(2)>div>div::after {content: ""; width: 100%; height: 0; border-top: 1px solid #9E9E9E; position: absolute; bottom: 40px;}
+        .graphics_detail>div:nth-of-type(2)>div>div>p:first-child {font-size: 15px; font-weight: 500; color: #424242;}
+        .graphics_detail>div:nth-of-type(2)>div>div>p:last-child {font-size: 15px; font-weight: 500; color: #616161;}
+        .graphics_detail>div:nth-of-type(2)>div>div>p:last-child::before {content: ""; width: 20px; height: 20px; background: url(./ui/asset/ps.png) center/contain no-repeat; position: absolute; margin-left: -25px;}
+        #graphics_container>li:nth-of-type(2) p:last-child::before{background-image: url(./ui/asset/ai.png);}
+        #graphics_container>li:nth-of-type(3) p:last-child::before{background-image: url(./ui/asset/4d.png);}
+        .graphics_detail>div:nth-of-type(2)>div>p:last-child {font-size: 13px; font-weight: 500; color: #616161; margin-top: 40px;}
+        #graphics_list #gra_btn {width: calc(100% - 500px); min-width: 700px; max-width: 1000px; margin: auto; height: 40px; bottom: calc((25vh + 30px)); position: fixed; display: flex; justify-content: flex-end; z-index: 51; pointer-events: none;}
+        #graphics_list #gra_btn button {width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; display: none; margin-right: 30px; pointer-events: auto;}
+        #graphics_list #gra_btn button.open {display: block;}
+
+        /* Portfolio - Web */
+        #web_list {width: 100%; height: calc(100vh - 15vh - 60px); display: flex; justify-content: center; align-items: center; position: absolute; padding-top: 40px; box-sizing: border-box;}
+        #web_list>div {width: 65vw; max-width: 1000px;min-width: 850px;}
+        #web_list>div>div:nth-of-type(1) {background: linear-gradient(to bottom, #E7E5E8, #D2D2D2); border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #web_list>div>div:nth-of-type(1) h3 {margin: 8px 0; text-align: center; font-size: 17px; font-weight: 600;}
+        #web_list>div>div:nth-of-type(2) { height: 55vh; min-height: 410px; display: flex; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; gap: 60px; position: relative; overflow: hidden; box-sizing: border-box;}
+        #web_list ul {position: absolute; top: 0; left: 0; height: 100%; background: #f6f6f6; border-radius: 0 0 0 30px;}
+        #web_list ul li div {width: 40vw; max-width: 670px; min-width: 500px; height: 60vh; position: absolute; margin: 30px 0 0 295px; transform: translateY(-50%); top: 10%;}
+        #web_list ul li div p {margin-top: -100px;}
+        #web_list ul img {width: 100%; height: 100%; object-fit: contain; margin-top: 15vh; pointer-events: none;}
+        #web_list ul li {font-size: 16px;}
+        #web_list ul span::before {content: ""; width: 30px; height: 30px; background: url(./ui/asset/icon_bookmark.png) center/contain no-repeat; position: absolute; left: 10px; transform: translateY(-20%);}
+        #web_list ul li span {display: block; width: 100%; height: 100%; padding: 20px 40px; box-sizing: border-box;}/* cursor: pointer;*/
+        #web_list ul li span:hover {background: #d9d9d9;}
+        #web_list a {position: absolute; right: 60px; bottom: 30px; width: 155px; height: 40px; background: linear-gradient(to bottom, #66B3FF, #117FFA); font-size: 24px; font-weight: 500; color: #fff;border-radius: 5px; text-decoration: none; text-align: center; line-height: 40px; box-shadow: 1px 1px 0px #9E9E9E;}
+
+        /* About */
+        #sec_about {background: url(./ui/asset/about2.jpg) center/cover no-repeat; width: 100%; height: calc(100vh - 15vh - 60px); position: relative; box-sizing: border-box;}
+        #category_about {width: 100%; height: calc(100vh - 15vh - 60px); background: transparent; display: flex; justify-content: center; align-items: center; position: absolute;}
+        #category_about ul {display: flex; gap: 30px; position: relative;}
+        #category_about li{width: 130px; height: 130px; text-shadow: 1px 1px 1px #333; z-index: 20; text-align: center; display: flex; justify-content: center;}/* cursor: pointer;*/
+        #category_about li a {font-size: 18px; text-decoration: none; text-align: center; color: #fff; padding-top: 130px; z-index: 50;}
+        #category_about li:nth-of-type(1):hover::after{display: block;}
+        #category_about li:nth-of-type(2):hover::after{display: block;}
+        #category_about li:nth-of-type(3):hover::after{display: block;}
+        #category_about li:nth-of-type(4):hover::after{display: block;}
+        #category_about li:nth-of-type(5):hover::after{display: block;}
+        #category_about li::after{content: ""; background: rgba(0, 0, 0, .2); border-radius: 50%; position: absolute; width: 165px; height: 165px; left: -19px; top: 15px; display: none;}
+        #category_about li:nth-of-type(2)::after{left: 142px;}
+        #category_about li:nth-of-type(3)::after{left: 50%; transform: translateX(-50%);}
+        #category_about li:nth-of-type(4)::after{left: auto; right: 142px;}
+        #category_about li:nth-of-type(5)::after{left: auto; right: -19px;}
+        #category_about a:nth-of-type(1) {margin-left: 0;}
+        #category_about li::before {content: ''; width: 80px; height: 80px; background: url(./ui/asset/icon_profile.png) center/cover no-repeat; position: absolute; top: 40px; left: 23px; z-index: 10;}
+        #category_about li:nth-of-type(2):before {background-image: url(./ui/asset/icon_skills.png); left: 188px;}
+        #category_about li:nth-of-type(3):before {background-image: url(./ui/asset/icon_edu.png); left: 345px;}
+        #category_about li:nth-of-type(4):before {background-image: url(./ui/asset/icon_license.png); left: auto; right: 190px;}
+        #category_about li:nth-of-type(5):before {background-image: url(./ui/asset/icon_contact.png); left: auto; right: 23px;}
+
+        #profile {width: 100%; height: calc(100vh - 15vh - 60px); background: transparent; display: flex; justify-content: center; align-items: center; position: absolute; padding-top: 40px; box-sizing: border-box;}
+        #profile>div>div:nth-of-type(1) {width: 1000px;background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #profile>div>div:nth-of-type(1) h3 {margin: 8px 0; font-size: 17px; font-weight: 600; text-align: center;}
+        #profile>div>div:nth-of-type(2) {height: 50vh; min-height: 320px; display: flex; justify-content: center; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 40px 0 90px; gap: 70px; position: relative; box-sizing: border-box;}
+        #profile>div>div:nth-of-type(2) img {width: 175px;}
+        #profile>div>div:nth-of-type(2) ul {display: flex; flex-direction: column; gap: 50px;}
+        #profile>div>div:nth-of-type(2) li {display: flex; gap: 55px;}
+        #profile>div>div:nth-of-type(2) li p:nth-of-type(1) {font-size: 24px; font-weight: 700; width: 100px;}
+        #profile>div>div:nth-of-type(2) li p:nth-of-type(2) {font-size: 24px; font-weight: 400; align-self: flex-start;}
+        #sec_about button.ab_btn {position: absolute; width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; bottom: 20px; right: 20px;}
+
+        #skills {width: 100%; height: calc(100vh - 15vh - 60px); background: transparent; display: flex; justify-content: center; align-items: center; position: absolute; padding-top: 40px; box-sizing: border-box;}
+        #skills>div {position: relative;}
+        #skills>div>div:nth-of-type(1) {width: 1000px;background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #skills>div>div:nth-of-type(1) h3 {margin: 8px 0; font-size: 17px; font-weight: 600; text-align: center;}
+        #skills>div>ul {height: 50vh; min-height: 410px; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 30px 100px 80px; gap: 12px; position: relative; box-sizing: border-box;}
+        #skills>div>ul li {width: 75%;}
+        #skills>div>ul li p {font-size: 20px; font-weight: 400; position: relative; display: flex; justify-content: space-between;}
+        #skills>div>ul li p span:nth-of-type(1) {width: 140px;}
+        #skills>div>ul li p span:nth-of-type(2) {font-size: 18px; color: #484848;}
+        /* #skills>div>ul li p span::before {content: ""; width: 220px; height: 15px; background: #484848; border-radius: 50px;display: inline-block; margin: 0 140px; box-shadow: 80px 0px 0px #fff;} */
+        /*총300 10%당 30px*/
+        #skills>div>ul progress {width: 300px; height: 15px; border-radius: 10px; overflow: hidden;border: 1px solid #ddd;}
+        progress::-webkit-progress-bar {background: #fff;}
+        progress::-moz-progress-bar {background: #fff;}/*크로스브라우징*/
+        progress::-webkit-progress-value {background-color: #484848;}
+        /* #skills>div button {position: absolute; width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; bottom: 45px; right: 55px;} */
+
+        #edu {width: 100%; height: calc(100vh - 15vh - 60px);  background: transparent; display: flex; justify-content: center; align-items: center; position: absolute; padding-top: 40px; box-sizing: border-box;}
+        #edu>div>div:nth-of-type(1) {width: 1000px; background: linear-gradient(to bottom, #E7E5E8, #D2D2D2); border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #edu>div>div:nth-of-type(1) h3 {margin: 8px 0; font-size: 17px; font-weight: 600; text-align: center;}
+        #edu>div>div:nth-of-type(2) {height: 50vh; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; padding: 30px 0 50px; gap: 5px; position: relative; flex-wrap: wrap; box-sizing: border-box;}
+        #edu>div>div:nth-of-type(2)>div {display: flex; width: 700px;}
+        #edu>div>div:nth-of-type(2) h4 {font-size: 32px; color: #131313; width: 280px;}
+        #edu>div>div:nth-of-type(2) ul {display: block;}
+        #edu>div>div:nth-of-type(2) ul li {margin-bottom: 30px;}
+        #edu>div>div:nth-of-type(2) p {font-size: 20px; color: #131313; display: block; white-space: nowrap;}
+        #edu>div>div:nth-of-type(2) p span:nth-of-type(1) {width: 150px; display: block; white-space: pre-line; display: inline-block; vertical-align: top;}
+        #edu>div>div:nth-of-type(2) p span:nth-of-type(2) {font-size: 14px; color: #616161; display: block; margin: 7px 0 0 155px;}
+        /* #edu>div>div:nth-of-type(2) button {position: absolute; width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; bottom: 45px; right: 55px;} */
+        #edu>div>div:nth-of-type(2) li:last-child p {height: 48px;}
+        #edu>div>div:nth-of-type(2)>div:nth-of-type(2) li:nth-of-type(2) span:nth-of-type(2) {margin-top: -10px;}
+
+        #license {width: 100%; height: calc(100vh - 15vh - 60px); background: transparent; display: flex; justify-content: center; align-items: center; flex-direction: column; position: absolute; padding-top: 40px; box-sizing: border-box;}
+        #license>div>div:nth-of-type(1) {width: 1000px;background: linear-gradient(to bottom, #E7E5E8, #D2D2D2);border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0;}
+        #license>div>div:nth-of-type(1) h3 {margin: 8px 0; font-size: 17px; font-weight: 600; text-align: center;}
+        #license>div>div:nth-of-type(2) {height: 50vh; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 20px; padding: 30px 100px 40px 150px; position: relative; box-sizing: border-box;}
+        #license li {margin-bottom: 25px;}
+        #license li:last-child {margin-bottom: 0;}
+        #license li p{font-size: 22px; font-weight: 500; color: #131313;}
+        #license li p span:nth-of-type(1) {margin-right: 80px}
+        #license li p span:nth-of-type(2) {font-size: 16px; font-weight: 500; color: #484848; margin-left: 15px;}
+        /* #license button {position: absolute; width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; bottom: 45px; right: 55px;} */
+
+        /*Contact*/
+        #sec_contact {height: calc(100vh - 15vh - 60px); background: url(./ui/asset/contact.jpg) center/cover no-repeat; display: flex; justify-content: center; align-items: center; padding-top: 40px; box-sizing: border-box;}
+        #sec_contact>div {display: flex; flex-direction: column;width: 65vw; min-width: 950px; max-width: 965px; min-height: 450px;}
+        #sec_contact>div>div:nth-of-type(1) {width: 100%;background: linear-gradient(to bottom, #E7E5E8, #D2D2D2); border: 1px solid #B7B7B7; border-radius: 30px 30px 0 0; box-sizing: border-box;}
+        #sec_contact>div>div:nth-of-type(1) h2 {margin: 8px 0; font-size: 17px; font-weight: 600; text-align: center;}
+        #sec_contact>div>div:nth-of-type(2) {height: 60vh; min-height: 450px; display: flex; align-items: center; background: #ECECEC; border: 1px solid #B7B7B7; border-radius: 0 0 30px 30px; font-size: 22px; position: relative;}
+        #sec_contact>div>div:nth-of-type(2) ul {width: 265px; height: 100%; min-height: 450px; position: absolute; top: 0; left: 0; font-size: 15px; background: #fff; border-radius: 0 0 0 30px; padding: 20px 20px 0; box-sizing: border-box; position: relative;}
+        #sec_contact>div>div:nth-of-type(2) ul li {display: flex; justify-content: space-between; align-items: center; padding-left: 20px; margin-bottom: 20px; font-size: 15px; color: #131313;}
+        #sec_contact>div>div:nth-of-type(2) ul li::before {content: ""; width: 20px; height: 20px; background: url(./ui/asset/icon_mail.png) center/contain no-repeat; position: absolute; left: 14px;}
+        #sec_contact>div>div:nth-of-type(2) ul li:nth-of-type(2):before {background-image: url(./ui/asset/icon_talk.png);}
+        #sec_contact>div>div:nth-of-type(2) ul li:nth-of-type(3):before {background-image: url(./ui/asset/youtube.png);}
+        #sec_contact>div>div:nth-of-type(2) ul li:nth-of-type(4):before {background-image: url(./ui/asset/tistory.png);}
+        #sec_contact>div>div:nth-of-type(2) ul li a {color: #131313;}
+        #sec_contact>div>div:nth-of-type(2) ul li button {text-indent: -999px; overflow: hidden; width: 13px; height: 13px; border: none; background: url(./ui/asset/copy.png) center/contain no-repeat;}
+        #sec_contact>div>div:nth-of-type(2) form {position: absolute; right: 0;  width: calc(100% - 265px); max-width: 700px; height: 100%; min-height: 450px; padding-top: 20px; box-sizing: border-box;}
+        #sec_contact>div>div:nth-of-type(2) form fieldset {border: none;}
+        #sec_contact>div>div:nth-of-type(2) form legend {width: calc(100% - 50px);font-size: 17px; color: #131313; margin: 0 auto 20px; font-weight: 500;}
+        #sec_contact>div>div:nth-of-type(2) form input,textarea {width: calc(100% - 50px); height: 35px; border-radius: 10px; border: none; background: linear-gradient(to bottom, #FDFDFD, #f1f1f1); padding-left: 15px; box-shadow: 1px 1px 1px #9E9E9E; margin: 0 auto 10px; position: relative; caret-color: #2084FC; resize: none; box-sizing: border-box;}
+        #sec_contact>div>div:nth-of-type(2) form textarea {padding-top: 15px; height: 25vh; min-height: 150px; display: block;}
+        #sec_contact>div>div:nth-of-type(2) form input::placeholder {color: #9E9E9E; font-size: 16px;font-weight: 300;}
+        #sec_contact>div>div:nth-of-type(2) form textarea::placeholder {color: #9E9E9E; font-size: 15px; font-weight: 300;font-family: 'Pretendard'; font-weight: 400;}
+        #sec_contact>div>div:nth-of-type(2) form input:focus {outline: 1px solid #2084FC;}
+        #sec_contact>div>div:nth-of-type(2) form textarea:focus {outline: 1px solid #2084FC; padding-top: 15px; box-sizing: border-box;}
+        #sec_contact>div>div:nth-of-type(2) form button {position: absolute; width: 155px; height: 40px; border: none; border-radius: 6px; background: #fff; box-shadow: 2px 2px 0px #9E9E9E; font-size: 24px; font-weight: 600; bottom: 20px; right: 20px;}
+
+        footer {height: calc(100vh - 15vh - 60px); background: url(./ui/asset/home.png) center/cover no-repeat;}
+        footer>div{background-color : rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+        footer>div>div {display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; font-size: 20px; font-weight: 300;}
+        footer div p:not(:last-of-type){display: flex; gap: 40px; width: 100%; padding-right: 15px;}
+        footer div p span:nth-of-type(1) {width: 200px; text-align: right;}
+        footer div p span:nth-of-type(2) {width: 220px; text-align: left;}
+        footer div p:last-of-type {text-indent: -999px; overflow: hidden; width: 108px; height: 42px; background: url(./ui/asset/logo_w.png) center/cover no-repeat; margin-top: 75px;}
+        footer address {font-style: normal; font-size: 16px; font-family: 'Pretendard'; font-weight: 200; margin-top: 10px;}
+
+        /*반응형 디자인*/
+        @media (max-width:700px) {
+            html {overflow-x: hidden;}
+            body {padding: 0; width: 100vw;}
+            #footer_bar {height: 10vh;}
+            #footer_bar::before{display: none;}
+            #footer_bar span {width: 5vh; height: 5vh;}
+
+            header {top: 0; width: 100%; justify-content: space-between;}
+            header::before {display: none;}
+            /* header::after {content: ''; width: 15px; height: 20px; background: url(./ui/asset/menu.svg) center/contain no-repeat; position: absolute; right: 20px; cursor: pointer;} */
+            header span {display: none;}
+            header nav>ul {position: fixed; right: -100%; top:0; width:100%; height:100%; background:rgba(0, 0, 0, .85);backdrop-filter: blur(10px);transition: ease all .3s; flex-direction: column; justify-content: center; align-items: center;}
+            header nav>ul.on {right:0;}
+            header nav>ul>li {height: fit-content;}
+            header nav>ul>li>a {color: #888; font-weight: 600;}
+            header nav>ul>li:hover {background: transparent;}
+            header nav>ul>li:hover>a {color: #fff;}
+            header nav>ul>li:nth-of-type(2) {display: flex; flex-direction: column;}
+            header nav>ul>li:nth-of-type(2) #portfolio_menubar{display: flex; position: static; margin-top: 0px; text-align: center; background: transparent; border: none; z-index: 100;}
+            header nav>ul>li:nth-of-type(2) #portfolio_menubar a {font-size: 15px; color: #888;}
+            header .portfolio_menu:not(:last-child) {border-bottom: none;}
+            header nav ul .portfolio_menu:hover {background: transparent;}
+            header #portfolio_menubar .portfolio_menu:hover a {color: #fff;}
+            header nav>ul>li.color {background: transparent;}
+            header nav>ul>li.color>a {color: #fff;}
+            header .portfolio_menu.color {background: transparent;}
+            header .portfolio_menu.color a {color: #fff;}
+            header button {display: block;}
+
+            #sec_home,#sec_portfolio,#sec_about,#category_about,#profile,#skills,#edu,#license,#sec_contact{height: calc(100vh - 10vh); width: 100%; margin-bottom: 10vh; padding-top: 40px; box-sizing: border-box;}
+            footer {height: calc(100vh - 10vh);}
+            #sec_portfolio #category_port,#video_list,#graphics_list,#web_list {height: 100%; width: 100%; box-sizing: border-box; }
+
+            #sec_home #home_content {box-sizing: border-box; width: fit-content; height: fit-content;}
+            #sec_home #welcome{width: 280px; height: 170px; border-radius: 15px;/* top: 8%; left: 30px;*/ position: static; margin-left: -10px;}
+            #sec_home #welcome h3 {font-size: 11px;}
+            #sec_home #welcome div:nth-of-type(1) {border-radius: 15px 15px 0 0;}
+            #sec_home #welcome div:nth-of-type(2) {font-size: 11px; border-radius: 0 0 15px 15px;}
+            #sec_home #welcome div:nth-of-type(2) img {width: 130px;}
+            #sec_home #preview {width: 320px; height: 230px; margin: 10px -10px 0 0;/* position: absolute; bottom: 100px; right: 30px;*/border-radius: 15px 15px 0 0;}
+            #sec_home #preview h3 {font-size: 11px;}
+            #sec_home #preview>div:nth-of-type(1) {border-radius: 15px 15px 0 0;}
+            #sec_home #preview>div:nth-of-type(2) {padding: 25px 0 0; border-radius: 0 0 15px 15px;}
+            #sec_home #preview_detail img {width: 250px; height: fit-content; object-fit: contain; object-position: 0;}
+            #sec_home #preview_detail div {margin: 5px 0 10px 170px;}
+            #sec_home #preview_detail button {width: 30px; height: 30px; }
+            #sec_home #preview_detail button:nth-of-type(1)::before {top: 5px; left: 515px;}
+            #sec_home #preview_detail button:nth-of-type(2)::before {top: 5px; left: 561px;}
+
+            #sec_portfolio #category_port div {gap: 30px;}
+            #sec_portfolio #category_port a {width: 60px; font-size: 12px; padding-top: 70px;}
+            #sec_portfolio #category_port a::before {width: 60px; height: 60px;}
+            #sec_portfolio #category_port span {width: 100px; height: 100px; left: -21px; top: -11px;}
+            #sec_portfolio #category_port span:nth-of-type(2){left: 70px;}
+            #sec_portfolio #category_port span:nth-of-type(3){left: 160px;}
+
+            #video_list ul {width: 100%; height: 75vh; gap: 25px; overflow: hidden;}
+            #video_list ul li {width: fit-content; }
+            #video_list ul li img {width: 96px; height: 54px;}
+            #video_list ul li>p {font-size: 11px; width: 60px; text-align: center;}
+            #video_list ul li:hover {margin: 0 20px 60px; transform: scale(1.1);}
+
+            #graphics_container {gap: 15px; font-size: 8px;}
+            #graphics_container>li>span {font-size: 12px; bottom: -20px; white-space: nowrap;}
+            #graphics_container .graphics_menu {width: 90px; height: 90px; gap: 5px; padding: 5px; border-radius: 10px;}
+            #graphics_container .image_box {width: 35px; height: 35px; border-radius: 5px;}
+
+
+            #category_about ul {gap: 2px;}
+            #category_about li {width: 70px; height: 70px;}
+            #category_about li a {font-size: 11px; padding-top: 70px;}
+            #category_about li::before {width: 50px; height: 50px; top: 15px; left: 10px;}
+            #category_about li:nth-of-type(2):before {left: 85px;}
+            #category_about li:nth-of-type(3):before {left: 155px;}
+            #category_about li:nth-of-type(4):before {left: 224px;}
+            #category_about li:nth-of-type(5):before {left: 298px;}
+            #category_about li::after {width: 100px; height: 100px; top: 0; left: -16px;}
+            #category_about li:nth-of-type(2)::after{left: 56px;}
+            #category_about li:nth-of-type(3)::after{left: 50%; transform: translateX(-50%);}
+            #category_about li:nth-of-type(4)::after{left: auto; right: 58px;}
+            #category_about li:nth-of-type(5)::after{left: auto; right: -15px;}
+
+
+            footer>div>div {font-size: 10px;}
+            footer address {font-size: 10px;}
+        }
+    </style>
+</head>
+<body>
+    <span id="footer_bar"><span></span></span>
+    <section id="sec_intro">
+        <!-- 인트로 -->
+        <div>
+            <h2><span class="screen_out">어서오세요, </span>hyuniverse<span class="screen_out"> 페이지입니다.</span></h2>
+            <a href="#sec_home" id="intro">입장하기</a>
+        </div>
+    </section>
+    <header>
+        <h1><a href="http://hyuniverse.kr/">hyuniverse</a></h1>
+        <nav>
+            <h2 class="screen_out">메인메뉴</h2>
+            <ul>
+                <li class="main_menu"><a id="nav_home"  href="#sec_home">HOME</a></li>
+                <li class="main_menu">
+                    <a id="nav_port" href="#sec_portfolio">PORTFOLIO</a>
+                    <ul id="portfolio_menubar">
+                        <li id="Video" class="portfolio_menu"><a href="#video_list">Video</a></li>
+                        <li id="Graphics" class="portfolio_menu"><a href="#graphics_list">Graphics</a></li>
+                        <li id="Web" class="portfolio_menu"><a href="#web_list">Web</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu"><a id="nav_about" href="#sec_about">ABOUT</a></li>
+                <li class="main_menu"><a id="nav_cont" href="#sec_contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <span id="time"></span>
+        <button>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </header>
+    <main>
+        <section id="sec_home" class="menu">
+            <h2 class="screen_out">HOME</h2>
+            <div id="home_content">
+                <div id="welcome">
+                    <div><h3>Welcome!</h3></div>
+                    <div>
+                        <img src="./ui/asset/logo.png" alt="로고 이미지">
+                        <p>My stroy, ideas, positive thinking in frame</p>
+                    </div>
+                </div>
+                <div id="preview">
+                    <div><h3>Preview</h3></div>
+                    <div id="preview_detail">
+                        <div>
+                            <ul>
+                                <li>
+                                    <img src="./ui/asset/04.png" alt="포트폴리오 미리보기 이미지">
+                                    <details>
+                                        <summary>프리뷰 상세 설명</summary>
+                                        <p>포스터 디자인</p>
+                                        <p>제품 광고 모작</p>
+                                        <p>사용 프로그램 : Photoshop</p>
+                                        <p>설명 : 싸이닉의 제품 홍보 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <img src="./ui/asset/11.png" alt="포트폴리오 미리보기 이미지">
+                                    <details>
+                                        <summary>프리뷰 상세 설명</summary>
+                                        <p>포스터 디자인</p>
+                                        <p>제품 광고 모작</p>
+                                        <p>사용 프로그램 : Photoshop</p>
+                                        <p>설명 : 싸이닉의 제품 홍보 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <img src="./ui/asset/08.png" alt="포트폴리오 미리보기 이미지">
+                                    <details>
+                                        <summary>프리뷰 상세 설명</summary>
+                                        <p>포스터 디자인</p>
+                                        <p>제품 광고 모작</p>
+                                        <p>사용 프로그램 : Photoshop</p>
+                                        <p>설명 : 싸이닉의 제품 홍보 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                    </details>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <button id="prev">이전</button>
+                            <button id="next">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sec_portfolio" class="menu">
+            <h2 class="screen_out">PORTFOLIO</h2>
+            <h3 class="screen_out">포트폴리오 카테고리</h3>
+            <div id="category_port" class="portfolio ">
+                <div>
+                    <a href="#video_list">Video</a><span></span>
+                    <a href="#graphics_list">Graphics</a><span></span>
+                    <a href="#web_list">Web</a><span></span>
+                </div>
+            </div>
+            <div id="video_list" class="Video hide_port portfolio">
+                <h3 class="screen_out">영상 작품 리스트</h3>
+                <ul>
+                    <li>
+                        <img src="./ui/asset/joy.png" alt="영상 썸네일">
+                        <p>조이 - 안녕 뮤직비디오</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PRW-0aYXyx8?si=ndltneIDmdWBn5Jo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>조이 - 안녕 뮤직비디오</p>
+                                    <p><span class="screen_out">영상 설명 : </span>조이 - 안녕의 뮤직비디오를 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_conte.png" alt="영상 썸네일">
+                        <p>Music is my life</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-pfnKLDk6cA?si=lzHdbEgXZ9R45LGL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>Music is my life</p>
+                                    <p><span class="screen_out">영상 설명 : </span>음악이 삶의 전부라는 내용의 꽁트 영상을 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_interview.png" alt="영상 썸네일">
+                        <p>황당인터뷰</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U3iCF33k6uE?si=mJspajxLPXYg-2FC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>황당인터뷰</p>
+                                    <p><span class="screen_out">영상 설명 : </span>옛날 예능 황당인터뷰를 패러디하여 인터뷰 영상을 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_santa.png" alt="영상 썸네일">
+                        <p>Happiness in Christmas</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dsHnrGbGIUw?si=bQA51AfAvadAYZwD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>Happiness in Christmas</p>
+                                    <p><span class="screen_out">영상 설명 : </span>크리스마스 주제의 영상 소스를 활용해 영상을 만들고 오디오 작업을 하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_cg.png" alt="영상 썸네일">
+                        <p>뿅뿅 지구오락실 타이틀</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BwVw5D7eOes?si=T2HEKGRqgLSDbqT9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>뿅뿅 지구오락실 타이틀</p>
+                                    <p><span class="screen_out">영상 설명 : </span>예능 지구오락실의 오프닝 시퀀스 영상을 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_bubbles.png" alt="영상 썸네일">
+                        <p>Bubbles 합성</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2LKcfGWb5b8?si=qSApyBqsULKX9TUd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>Bubbles 합성</p>
+                                    <p><span class="screen_out">영상 설명 : </span>비눗방울 소스를 영상에 합성하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_charac.png" alt="영상 썸네일">
+                        <p>캐릭터 모션</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dXOCGiPsIzA?si=35ZJv9nHpDtXYC6r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>캐릭터</p>
+                                    <p><span class="screen_out">영상 설명 : </span>캐릭터에 모션을 입혀 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/thumbnail_coca.png" alt="영상 썸네일">
+                        <p>코카콜라 광고</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xkOV5LdCgGo?si=W9ZG8R90EAKHnFRr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>코카콜라 광고</p>
+                                    <p><span class="screen_out">영상 설명 : </span>코카콜라 광고 영상을 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <img src="./ui/asset/c4d_All.png" alt="영상 썸네일">
+                        <p>3D 연령고지</p>
+                        <details open>
+                            <summary>영상 상세 설명</summary>
+                            <div class="video_detail">
+                                <div>
+                                    <p>Video</p>
+                                </div>
+                                <div>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bNbnmP8GZ1Q?si=4zdfTVk00h1fjHfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <p class="title"><span class="screen_out">제목 : </span>3D 연령고지</p>
+                                    <p><span class="screen_out">영상 설명 : </span>3D 모델링을 통해 연령고지 영상을 제작하였습니다.</p>
+                                    <a href="#">유튜브 바로가기</a>
+                                </div>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+            <div id="graphics_list" class="Graphics hide_port portfolio">
+                <h3 class="screen_out">Graphics 작품 리스트</h3>
+                <ul id="graphics_container">
+                    <li>
+                        <span>Photoshop</span>
+                        <ul id="photoshop" class="graphics_menu">
+                            <li>
+                                <span>고래 소녀</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/girl_and_whale.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/girl_and_whale.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>고래 소녀 합성 사진을 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>SODA SHACK</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/05.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/05.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>SODA SHACK 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>Big Sale</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/10.png" alt="Big Sale">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/10.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>한가위 빅세일 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>Syrup</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/06.png" alt="Syrup">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/06.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>Syrup 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>쇼시시</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/11.png" alt="쇼시시">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/11.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>쇼시시 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>봄이 왔나 봄</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/08.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/08.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>봄이 왔나 봄 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>레저데이</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/09.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/09.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>레저데이 홍보 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>온풍기</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/12.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/12.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Photoshop</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>온풍기 제품 홍보 포스터를 포토샵을 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Illustrator</span>
+                        <ul class="graphics_menu">
+                            <li>
+                                <span>패키지 디자인</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/package.jpg" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/package.jpg" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Illustrator</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>박스 패키지를 일러스트를 활용하여 디자인하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>ONTECH</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/illust1.png" alt="Big Sale">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/illust1.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Illustrator</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>ON-TECH 포스터를 일러스트를 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>lollipop</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/illust3.png" alt="Syrup">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/illust3.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Illustrator</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>lollipop 포스터를 일러스트를 활용하여 디자인하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>계란</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/illust2.png" alt="쇼시시">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/illust2.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>포스터 디자인</p>
+                                                <div>
+                                                    <p>제품 광고 모작</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Illustrator</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>계란 그림을 일러스트를 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Cinema 4D</span>
+                        <ul class="graphics_menu">
+                            <li>
+                                <span>연령고지</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/c4d_All.png" alt="SODA SHACK">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/c4d_All.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>연령고지</p>
+                                                <div>
+                                                    <p>연령고지</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Cinema 4D</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>연령고지 모델링을 Cinema 4D를 활용하여 제작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>컵 Modeling</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/c4d_cup.png" alt="Big Sale">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/c4d_cup.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>모델링 모작</p>
+                                                <div>
+                                                    <p>컵 모델링</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Cinema 4D</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>컵 모델링을 Cinema 4D를 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                            <li>
+                                <span>선인장 Modeling</span>
+                                <div class="image_box">
+                                    <img src="./ui/asset/c4d_sunin.png" alt="Syrup">
+                                </div>
+                                <details open>
+                                    <summary>그래픽 상세 설명</summary>
+                                    <div class="graphics_detail">
+                                        <div>
+                                            <p>Details</p>
+                                        </div>
+                                        <div>
+                                            <div class="image_btn">
+                                                <img src="./ui/asset/c4d_sunin.png" alt="2D 이미지">
+                                                <button>크게보기</button>
+                                            </div>
+                                            <div>
+                                                <p>모델링 모작</p>
+                                                <div>
+                                                    <p>선인장 모델링</p>
+                                                    <p><span class="screen_out">사용 프로그램 : </span>Cinema 4D</p>
+                                                </div>
+                                                <p><span class="screen_out">설명 : </span>선인장 모델링을 Cinema 4D를 활용하여 모작하였습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="gra_btn">
+                    <button>닫기</button>
+                </div>
+            </div>
+            <div id="web_list" class="Web hide_port portfolio">
+                <div>
+                    <div>
+                        <h3>Web<span class="screen_out"> 작품 리스트</span></h3>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <span>삼성 디스플레이 뉴스룸</span>
+                                <div>
+                                    <img src="./ui/asset/samsung.png" alt="웹 미리보기" id="web_img">
+                                    <!-- <p>제작기간 : 1week</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <span>쏘카</span>
+                                <div>
+                                    <img src="./ui/asset/socar.png" alt="웹 미리보기" class="screen_out">
+                                    <!-- <p>웹 설명</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <span>구글 홈</span>
+                                <div>
+                                    <img src="./ui/asset/google.png" alt="웹 미리보기" class="screen_out">
+                                    <!-- <p>웹 설명</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <span>카카오 로그인</span>
+                                <div>
+                                    <img src="./ui/asset/kakao.png" alt="웹 미리보기" class="screen_out">
+                                    <!-- <p>웹 설명</p> -->
+                                </div>
+                            </li>
+                            <li>
+                                <span>네이트 메일</span>
+                                <div>
+                                    <img src="./ui/asset/nate.png" alt="웹 미리보기" class="screen_out">
+                                    <!-- <p>웹 설명</p> -->
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://hyuniverse.kr/team/index.html" id="web_link" target="_blank">바로가기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sec_about" class="menu">
+            <h2 class="screen_out">ABOUT</h2>
+            <div id="category_about" class="about">
+                <ul>
+                    <li><a href="#profile">Profile</a><span></span></li>
+                    <li><a href="#skills">Skills</a><span></span></li>
+                    <li><a href="#edu">Education <br>& Experiences</a><span></span></li>
+                    <li><a href="#license">License</a><span></span></li>
+                    <li><a href="#sec_contact">Contact</a><span></span></li>
+                </ul>
+            </div>
+            <div id="profile" class="hide_about">
+                <div>
+                    <div>
+                        <h3>Profile</h3>
+                    </div>
+                    <div>
+                        <img src="./ui/asset/profile.jpg" alt="프로필사진">
+                        <ul>
+                            <li>
+                                <p>Name</p>
+                                <p>김현경</p>
+                            </li>
+                            <li>
+                                <p>Birth</p>
+                                <p>1998.11.12</p>
+                            </li>
+                            <li>
+                                <p>E-Mail</p>
+                                <p>68471537@naver.com</p>
+                            </li>
+                            <li>
+                                <p>Address</p>
+                                <p>SeongNam, Republic Of Korea</p>
+                            </li>
+                        </ul>
+                        <button class="ab_btn">닫기</button>
+                    </div>
+                </div>
+            </div>
+            <div id="skills" class="hide_about">
+                <div>
+                    <div>
+                        <h3>Skills</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <p><span>PHOTOSHOP</span> <progress max="100" value="80"></progress><span>80%</span></p>
+                        </li>
+                        <li>
+                            <p><span>ILLUSTRATOR</span><progress max="100" value="80"></progress><span>80%</span></p>
+                        </li>
+                        <li>
+                            <p><span>PREMIERE</span><progress max="100" value="90"></progress><span>90%</span></p>
+                        </li>
+                        <li>
+                            <p><span>AFTER EFFECT</span><progress max="100" value="80"></progress><span>80%</span></p>
+                        </li>
+                        <li>
+                            <p><span>CINEMA 4D</span><progress max="100" value="70"></progress><span>70%</span></p>
+                        </li>
+                        <li>
+                            <p><span>HTML</span><progress max="100" value="90"></progress><span>90%</span></p>
+                        </li>
+                        <li>
+                            <p><span>CSS</span><progress max="100" value="90"></progress><span>90%</span></p>
+                        </li>
+                        <li>
+                            <p><span>JAVASCRIPT</span><progress max="100" value="80"></progress><span>80%</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <button class="ab_btn">닫기</button>
+                </div>
+            </div>
+            <div id="edu" class="hide_about">
+                <div>
+                    <div>
+                        <h3>Education & Experiences</h3>
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Education</h4>
+                            <ul>
+                                <li>
+                                    <p><span>2024.02</span> 한국 IT아카데미 <span>멀티미디어 훈련 수료</span></p>
+                                </li>
+                                <li>
+                                    <p><span>2024.02</span> 건국대학교 <span>스마트ICT융합공학과 졸업</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Experiences</h4>
+                            <ul>
+                                <li>
+                                    <p><span>2024</span> 한국 IT아카데미 <span>멀티미디어 훈련 수료</span></p>
+                                </li>
+                                <li>
+                                    <p><span>2020.04 ~2022.02</span> 학생 크리에이터 활동 <span>건국대학교 공식 유튜브 채널 크리에이터</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="ab_btn">닫기</button>
+                    </div>
+                </div>
+            </div>
+            <div id="license" class="hide_about">
+                <div>
+                    <div>
+                        <h3>License</h3>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <p><span>2023</span> TOEIC <span> 835점</span></p>
+                            </li>
+                            <li>
+                                <p><span>2023</span> OPIc <span> IH</span></p>
+                            </li>
+                            <li>
+                                <p><span>2023</span> 드론자격(무인멀티콥터) 3종</p>
+                            </li>
+                            <li>
+                                <p><span>2022</span> 정보처리기사</p>
+                            </li>
+                            <li>
+                                <p><span>2020</span> GTQ 1급</p>
+                            </li>
+                            <li>
+                                <p><span>2017</span> 운전면허 2종</p>
+                            </li>
+                        </ul>
+                        <button class="ab_btn">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sec_contact" class="menu">
+            <div>
+                <div>
+                    <h2>Contact</h2>
+                </div>
+                <div>
+                    <ul>
+                        <li><span class="screen_out">이메일 : </span>68471537@naver.com<button id="data-copy1" class="data-copy">copy</button><input type="hidden" id="data-area1" class="data-area" value="68471537@naver.com"></li>
+                        <li><span class="screen_out">카톡 ID : </span>@khk1112<button id="data-copy2" class="data-copy">copy</button><input type="hidden" id="data-area2" class="data-area" value="@khk1112"></li>
+                        <li><span class="screen_out">유튜브 : </span><a href="https://www.youtube.com/@kim_hyun" target="_blank">youtube.com/@kim_hyun</a></li>
+                        <li><span class="screen_out">티스토리 : </span><a href="https://hemon.tistory.com/" target="_blank">hemon.tistory.com</a></li>
+                    </ul>
+                    <form action="#" id="form">
+                        <fieldset>
+                            <legend>메일 보내기</legend>
+                            <input type="text" placeholder="이름" name="user_name" required>
+                            <input type="text" placeholder="연락처(이메일은 양식을 지켜주세요)" name="user_tel" required>
+                            <input type="text" placeholder="제목" name="user_title" required>
+                            <textarea placeholder="남기실 내용" name="msg" required></textarea>
+                            <button id="send_btn">보내기</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <div>
+                <p><span>Made By: </span><span>김현경</span></p>
+                <p><span>Production Period: </span><span>2023.11.27 - 2023.12.29</span></p>
+                <p><span>Version: </span><span>0.0.1v</span></p>
+                <p><span>Last Update: </span><span>2024.02.02</span></p>
+                <p>hyuniverse.kr</p>
+                <address>copyright &copy; 2024 hyuniverse. All rights reserved.</address>
+            </div>
+        </div>
+    </footer>
+    <div id="cursor">
+        <img src="./ui/asset/cursor0.png" alt="마우스커서">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        //sec_home > preview 이미지 슬라이드
+        var page = 0;
+        var bt = document.querySelectorAll("#sec_home button");
+        var ul = document.querySelector("#preview_detail ul");
+        bt[1].onclick = function(){
+            if(page<2){
+                page++;
+                ul.style.marginLeft = (-550*page)+"px";
+            } else {
+                ul.style.animation = "action ease 1 0.3s";
+            }
+        }
+        bt[0].onclick = function(){
+            if(page>0){
+                page--;
+                ul.style.marginLeft = (-550*page)+"px";
+            } else {
+                ul.style.animation = "action ease 1 0.3s";
+            }
+        }
+
+        //class none을 추가하면 연해짐
+        // if(page==0){
+        //     $("#sec_home #preview_detail button").addClass('none');
+        // } else if (page==1){
+        //     $("#preview_detail button").removeClass('none');
+        // } else if(page == 2) {
+        //     $("#sec_home button").toggleClass('none');
+        //         $("#sec_home button").toggleClass('none');
+        // }
+
+        $(".menu").hide();$("footer").hide();$("header").hide();$(".hide_port").hide();$(".hide_about").hide();
+        
+        //인트로 입장하기
+        $("#sec_intro a").click(function(){
+            $("#sec_intro").hide();
+            $("#sec_home").addClass("show");
+            $(".show").fadeIn();
+            $("header").fadeIn();
+            $("nav .main_menu:first-child").addClass("color");
+        })
+
+        //푸터 사과 누르기
+        $("#footer_bar span").click(function(){
+            $("main").toggle();
+            $("footer").toggle();
+            $("header").toggle();
+        })
+
+        //헤더 메뉴이동
+        $("nav .main_menu>a").click(function(e){
+            //메뉴 색상 선택되면 변경하기
+            $(".main_menu").removeClass("color");
+            $("#portfolio_menubar li").removeClass("color");
+            $(this).parent().addClass("color");
+
+            var menu = $("nav .main_menu").index($(this).parent());//몇번째 li
+            //각 페이지로 들어가기
+            $(".menu").hide();
+            $(".menu").removeClass("show");
+            $(".menu").eq(menu).addClass("show");//선택한 메뉴에 show
+            $(".show").fadeIn();
+            $(".hide_about").fadeOut();
+            //$("#"+name).fadeOut(); //about 팝업 닫기
+
+            //포트폴리오 카테고리홈에서 서브메뉴 들어가기
+            if(e.target.id=="nav_port"){
+                $(".hide_port").hide();
+                //$(".portfolio").hide();
+                $("#category_port").show();
+                $("#"+name).fadeOut();
+            }
+
+            //모바일 닫기
+            $("header ul").removeClass("on");
+            $("header button i").addClass("fa-ellipsis-vertical");
+            $("header button i").removeClass("fa-xmark");
+        })
+        //모바일 메뉴 버튼
+        $("header button").click(function(){
+            $("header ul").toggleClass("on");
+            $("header button i").toggleClass("fa-ellipsis-vertical");
+            $("header button i").toggleClass("fa-xmark");
+        })
+        //서브메뉴 눌러서 페이지 들어가기
+        $("#portfolio_menubar li").click(function(){
+            //색상 변경하기
+            $(".main_menu").removeClass("color");
+            $("#nav_port").parent().addClass("color");
+            $("#portfolio_menubar li").removeClass("color");
+            $(this).addClass("color");
+            
+            //포폴 서브메뉴 열기
+            var port = $(this).attr("id");//Video,Graphics,Web
+            $(".menu").hide();
+            $(".menu").removeClass("show");
+            $("#sec_portfolio").addClass("show");
+            $(".show").fadeIn();
+            $(".portfolio").hide();
+            $("."+port).fadeIn();
+            return false;
+
+            //모바일 메뉴 닫기
+            $("header ul").removeClass("on");
+            $("header button i").addClass("fa-ellipsis-vertical");
+            $("header button i").removeClass("fa-xmark");
+        })
+
+        //포폴 홈에서 서브메뉴 들어가기
+        $("#category_port a").click(function(e){
+            //alert(e.target.text);
+            $("#category_port").hide();
+            $("."+e.target.text).fadeIn();
+            //서브메뉴 색상 바꾸는거 추가하기
+            $(".main_menu").removeClass("color");
+            $("#portfolio_menubar li").removeClass("color");
+            
+            //헤더 색상 변경
+            $("#"+e.target.text).addClass('color');
+            $("#nav_port").parent().addClass("color");
+        })
+
+        //어바웃 팝업창 띄우기
+        var name;
+        $("#category_about li").click(function(){
+            var n = $("#category_about li").index(this);
+            switch(n){
+                case 0: name="profile"; break;
+                case 1: name="skills"; break;
+                case 2: name="edu"; break;
+                case 3: name="license"; break;
+                //case 4: name="sec_contact"; break;
+            }
+            $("#"+name).css('z-index', 99);
+            $("#"+name).fadeIn();
+            //어바웃 팝업 닫기
+            $("#"+name+" button").click(function(){
+                $("#"+name).fadeOut();
+            })
+
+            if(n==4){
+                $("#sec_about").hide();
+                $(".menu").removeClass("show");
+                $("#sec_contact").addClass("show");
+                $(".show").fadeIn();
+                //헤더 색상 변경
+                $(".main_menu").removeClass("color");
+                $(".main_menu:last-child").addClass("color")
+            }
+        })
+
+        //포폴 비디오 팝업창 열기
+        $("#video_list li>img, #video_list li>p").click(function(e){
+            var n = $("#video_list li").index($(this).parent());
+            $("#video_list li").eq(n).addClass("on");
+        })
+        //포폴 비디오 팝업창 닫기
+        $("#video_list details").click(function(e){
+
+            //iframe 태그 영상 멈추기
+            if($("#video_list li.on").length>0) {
+                var copy = $("#video_list li.on iframe").clone();
+                $("#video_list li.on iframe").remove();
+                $("#video_list li.on .title").before(copy);
+            }
+            
+            if(e.target.tagName=="DETAILS"){
+                $(this).parent().removeClass("on");
+            }
+        })
+
+        //그래픽 메뉴 클릭시 커지게
+        $(".graphics_menu").click(function(e){
+            var n = $(".graphics_menu").index(this);
+
+            $(".graphics_menu").removeClass("open");
+            $(".graphics_menu").eq(n).addClass("open");
+            $(".image_box").removeClass("open");
+            $(".graphics_menu.open").find(".image_box").addClass("open");
+            // $(".image_box.open").css("width", "120px");
+            // $(".image_box.open").css("height", "120px");
+
+            //open일때만 디테일 보이게
+            $(".image_box.open").click(function(){
+                $(this).next().addClass("on");
+                $("#graphics_list #gra_btn button").addClass("open");
+
+                //이미지 크게
+                $(".image_btn button").click(function(){
+                    $(".image_btn").addClass("expand");
+                    $("#gra_btn").css("z-index", "0");
+
+                    //딴데 누르면 리무브 클래스
+                    $(".image_btn").click(function(e){
+                        //alert(e.target.tagName);
+                        if(e.target.tagName=="DIV"){
+                            $(".image_btn").removeClass("expand");
+                            $("#gra_btn").css("z-index", "51");
+                        }
+                    })
+                })
+                
+
+                //상세보기 닫기
+                $("#graphics_list #gra_btn button").click(function(){
+                    $(".image_box").next().removeClass("on");
+                    $("#graphics_list #gra_btn button").removeClass("open");
+                })
+            })
+
+        })
+        //밖에 누르면 다시 원래 크기로
+        $("#graphics_container").click(function(e){
+            if(e.target.id=="graphics_container"){
+                $(".graphics_menu").removeClass("open");
+                // $(".image_box").css("width", "90px");
+                // $(".image_box").css("height", "90px");
+                $(".image_box").removeClass("open");
+            }
+        })
+        
+        $("#web_list li:first-child").css("background-color", "#d9d9d9");
+        //웹페이지 목록별 주소&이미지 변경하기
+        $("#web_list li").click(function(e){
+            if(e.target.tagName=="SPAN"){
+                var n = $(this).index();
+                var link;
+                var img;
+                switch(n){
+                    case 0 : link="http://hyuniverse.kr/team/index.html"; img="./ui/asset/samsung.png"; break;
+                    case 1 : link="http://hyuniverse.kr/socar/socar.html"; img="./ui/asset/socar.png"; break;
+                    case 2 : link="http://hyuniverse.kr/html/21.html"; img="./ui/asset/google.png"; break;
+                    case 3 : link="http://hyuniverse.kr/html/22.html"; img="./ui/asset/kakao.png"; break;
+                    case 4 : link="http://hyuniverse.kr/html/23.html"; img="./ui/asset/nate.png"; break;
+                    
+                }
+                $("#web_link").prop("href",link);
+                $("#web_img").attr("src", img);
+
+                //li 색상 변경
+                $("#web_list li").css("background-color", "#f6f6f6");
+                $(this).css("background-color", "#d9d9d9");
+            }
+        })
+
+        //Contact 이메일 주소 복사 기능
+        $("#data-copy1").click(function(){
+            //input을 텍스트로 변환
+            $("#data-area1").attr('type', 'text');
+            $("#data-area1").select();
+            var copy1 = document.execCommand('copy');
+            $("#data-area1").attr('type', 'hidden');
+            if(copy1) {
+                alert("복사 완료!\n68471537@naver.com");
+            }
+        })
+        $("#data-copy2").click(function(){
+            //input을 텍스트로 변환
+            $("#data-area2").attr('type', 'text');
+            $("#data-area2").select();
+            var copy2 = document.execCommand('copy');
+            $("#data-area2").attr('type', 'hidden');
+            if(copy2) {
+                alert("복사 완료!\n @khk1112");
+            }
+        })
+
+        //상단바 현재시각 표시하기
+        //setInterval로 1분에 한번씩 텍스트 뿌려주게 수정하기
+        function setClock(){
+            var week = new Array('일', '월', '화', '수', '목', '금', '토');
+            var today = new Date().getDay();
+            var todayLabel = week[today];
+            var date = new Date();
+            var min = date.getMinutes().toString().padStart(2,'0');
+            var hour = date.getHours();
+            if(hour<10){
+                hour = "0"+hour;
+            }
+
+            $("#time").text(todayLabel+"\u00a0\u00a0"+hour + ":" + min);
+        }
+        setClock();
+        setInterval("setClock()",10000);
+
+        //폼메일 세팅정보
+        emailjs.init('dZt7GWTj-3u9bq7SS')
+        const btn = document.getElementById('send_btn');//버튼위치 지정
+
+        //메일 보내기 기능
+        document.getElementById('form')
+        .addEventListener('submit', function(event) {
+            event.preventDefault();
+            btn.value = 'Sending...';
+            const serviceID = 'default_service';
+            const templateID = 'template_tnf261e';
+            emailjs.sendForm(serviceID, templateID, this).then(() => {
+                btn.value = 'Send Email';
+                alert('전송이 완료되었습니다!');
+            }, (err) => {
+                btn.value = 'Send Email';
+                alert(JSON.stringify(err));
+            });
+        });
+
+        //마우스 커서 변경
+        var cursor = document.querySelectorAll("#cursor img");
+        document.onmousemove = function(e){
+            //console.log(e.clientX+", "+e.clientY); //마우스 좌표값 실시간 출력
+            cursor[0].style.left = e.clientX+"px";
+            cursor[0].style.top = e.clientY+"px";
+            
+        }
+
+    </script>
+    
+
+</body>
+</html>
